@@ -39,9 +39,20 @@ def max_index(X):
     """
     i = 0
     j = 0
-
+   if not isinsitance(X, np.ndarray):
+      raise ValueError("Not an Array")
+   if len(X.shape)!=2:
+      raise ValueError("Not a 2D Array") 
     # TODO
-
+   m=X.shape[0]
+   n=X.shape[1]
+   max = X[i][j]
+   for i1 in range (m): 
+      for j1 in range(n):
+         if max<X[i1][j1]:
+            max=X[i1][j1]
+            i=i1
+            j=j1
     return i, j
 
 
